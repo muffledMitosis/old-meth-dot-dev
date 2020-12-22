@@ -6,6 +6,10 @@ app.get('/',(req, res)=>{
 	res.send('Lol the site works');
 });
 
+app.get('/mc/',(req, res)=>{
+	res.send('connect to mc.meth.dev using Minecraft! :D');
+});
+
 app.listen(port, () => {
 	console.log(`app is listening on localhost:${port}`);
 });
