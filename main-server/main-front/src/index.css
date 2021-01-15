@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+
 @tailwind base;
+
+.main-bg-gradient {
+    background: linear-gradient(231.84deg, #040B22 3.15%, #252935 94.07%);
+}
+
 @tailwind components;
 @tailwind utilities;
