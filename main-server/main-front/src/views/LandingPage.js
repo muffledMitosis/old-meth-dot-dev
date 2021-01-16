@@ -14,7 +14,7 @@ function LandingPage(){
     let elem = (
         <div className="w-screen h-screen main-bg-gradient overflow-hidden">
             
-            <div className="w-full h-full absolute"><Canvas /></div>
+            {/* <div className="w-full h-full absolute"><Canvas /></div> */}
 
             <img className="absolute right-0 bottom-0 w-1/2 md:w-1/4" src={TLArt} />
 
