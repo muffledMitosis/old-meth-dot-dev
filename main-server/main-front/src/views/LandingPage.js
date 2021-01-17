@@ -1,5 +1,5 @@
 import LandingSection from '../widgets/landing_section.js';
-import Canvas from '../widgets/Canvas';
+import Canvas2d from '../widgets/Canvas';
 
 import ProfilePic from '../assets/profilepic.png';
 import TLArt from '../assets/tl-art.svg';
@@ -10,11 +10,18 @@ import {FiTwitter, FiGithub} from 'react-icons/fi';
 
 let sections = ["Projects", "Blog", "About"];
 
+const canvasDraw = (context) => {
+    context.fillStyle = '#0000FF';
+    context.beginPath();
+    context.arc(50, 100, 20, 0, 2*Math.PI);
+    context.fill();
+};
+
 function LandingPage(){
     let elem = (
         <div className="w-screen h-screen main-bg-gradient overflow-hidden">
             
-            {/* <div className="w-full h-full absolute"><Canvas /></div> */}
+            <div className="w-full h-full absolute"><Canvas2d draw={canvasDraw}/></div>
 
             <img className="absolute right-0 bottom-0 w-1/2 md:w-1/4" src={TLArt} />
 
