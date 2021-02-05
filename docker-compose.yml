@@ -1,0 +1,47 @@
+version: "3"
+
+services:
+  main-server:
+    restart: unless-stopped
+    image: node:latest
+    volumes:
+      - ./main-server:/src
+    command: bash -c "(cd /src && npm install) && node /src/main.js"
+    
+
+  nginx:
+    restart: unless-stopped
+    image: nginx:mainline-alpine
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+        CERTBOT_EMAIL: methsndr@gmail.com
+    volumes:
+      - web-root:/var/www/html
+      - ./nginx-conf:/etc/nginx/conf.d
+      - certbot-etc:/etc/letsencrypt
+      - certbot-var:/var/lib/letsencrypt
+    depends_on:
+      - main-server
+  
+  certbot:
+    image: certbot/certbot
+    container_name: certbot
+    volumes:
+      - certbot-etc:/etc/letsencrypt
+      - certbot-var:/var/lib/letsencrypt
+      - web-root:/var/www/html
+    depends_on:
+      - nginx
+    command: certonly --webroot --webroot-path=/var/www/html --email methsndr@gmail.com --agree-tos --no-eff-email --staging -d meth.dev -d www.meth.dev -d mc.meth.dev -d www.mc.meth.dev
+
+volumes:
+  certbot-etc:
+  certbot-var:
+  web-root:
+    driver: local
+    driver_opts:
+      type: none
+      device: /home/meth/mdd/meth-dot-dev/views/
+      o: bind
