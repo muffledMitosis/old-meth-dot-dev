@@ -1,4 +1,4 @@
-const utils = require('./utils/utils');
+const interpretCommand = require('./utils/manager');
 const express = require("express");
 const readline = require("readline");
 
@@ -11,7 +11,7 @@ const app = express();
 const PORT = 6969;
 
 rl.on('line', (input)=>{
-    console.log(input);
+    interpretCommand(input);
 });
 
 app.get("/", (req, res, next) => {

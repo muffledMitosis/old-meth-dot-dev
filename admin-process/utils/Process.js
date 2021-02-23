@@ -2,6 +2,7 @@ class Process {
     constructor(name, startCommand){
         this.name = name;
         this.startCommand = startCommand;
+        this.processHandle = undefined;
     }
 
     start(){
