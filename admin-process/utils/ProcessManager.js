@@ -11,7 +11,8 @@ class ProcessManager {
     }
 
     removeProcess(procName){
-        for(proc in this.processes){
+        for(let i=0; i<this.processes.length; i++){
+            let proc = this.processes[i];
             if(proc.name == procName){
                 proc.stop();
             }
