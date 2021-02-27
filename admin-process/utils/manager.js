@@ -3,14 +3,17 @@ const ProcessManager = require("./ProcessManager");
 
 const procMan = new ProcessManager();
 
-procMan.addProcess(new Process("Minecraft", "node lol"), true);
-procMan.addProcess(new Process("main-front", "node lol1"), true);
-procMan.addProcess(new Process("utils-api", "node lol2"), true);
+procMan.addProcess(new Process("main-front", "../main-server/", "node ./main.js"), true);
 
 function interpretCommand(command){
-    switch (command) {
+    let call = command.split(" ");
+    switch (call[0]) {
         case "ls":
             console.log(procMan.processes);
+            break;
+        case "attach":
+            console.log(`Attaching to ${call[1]}`);
+            procMan.getProcess(call[1]).print_stdout();
             break;
         default:
             break;

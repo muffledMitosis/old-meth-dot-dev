@@ -19,6 +19,15 @@ class ProcessManager {
         }
     }
 
+    getProcess(proc){
+        for(let i=0; i<this.processes.length; i++){
+            if(this.processes[i].name == proc)
+                return this.processes[i];
+            else
+                return undefined;
+        }
+    }
+
 }
 
 module.exports = ProcessManager;
