@@ -1,8 +1,24 @@
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
 import LandingPage from './views/LandingPage';
+import ProjectsPage from './views/ProjectsPage';
+
+
+const Routing = () => {
+  return(
+    <Router>
+      <Switch>
+        <Route exact path="/" component={LandingPage} />
+        <Route exact path="/projects" component={ProjectsPage} />
+      </Switch>
+    </Router>
+  )
+}
+
 
 function App() {
   return (
-    <LandingPage />
+    <Routing />
   );
 }
 
