@@ -19,7 +19,7 @@ const canvasDraw = (context) => {
 
 function LandingPage(){
     let elem = (
-        <div className="w-screen h-screen main-bg-gradient overflow-hidden">
+        <div className="main-bg-div">
             
             {/* <div className="w-full h-full absolute"><Canvas2d draw={canvasDraw}/></div> */}
 
@@ -28,9 +28,9 @@ function LandingPage(){
             <div className="relative flex flex-row space-x-4 items-center float-right mr-3 mt-3">
                 {sections.map(section=><LandingSection name={section} />)}
                 <div className="flex flex-row text-lg text-white space-x-3 mr-4">
-                    <FaInstagram className="cursor-pointer" />
+                    <FaInstagram className="cursor-pointer" onClick={()=>window.location.href="https://www.instagram.com/muffledmitosis/"}/>
                     <FiTwitter className="cursor-pointer" />
-                    <FiGithub className="cursor-pointer" />
+                    <FiGithub className="cursor-pointer" onClick={()=>window.location.href="https://github.com/muffledMitosis"}/>
                 </div>
             </div>
 

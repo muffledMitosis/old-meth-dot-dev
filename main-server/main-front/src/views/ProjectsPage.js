@@ -1,7 +1,7 @@
 function ProjectsPage(){
   let elem = (
-    <div>
-      lmao
+    <div className="main-bg-div">
+      <div className="general-text">illuminati confirmed</div>
     </div>
   );
 

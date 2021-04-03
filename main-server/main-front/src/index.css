@@ -7,4 +7,13 @@
 }
 
 @tailwind components;
+
+.main-bg-div {
+    @apply w-screen h-screen main-bg-gradient overflow-hidden;
+}
+
+.general-text {
+    @apply text-white font-fira-code;
+}
+
 @tailwind utilities;
