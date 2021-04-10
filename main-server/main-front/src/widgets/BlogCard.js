@@ -1,7 +1,7 @@
 function BlogCard(props){
   let elem = (
-    <div>
-      <img src={props.data["imgUrl"]} />
+    <div className="w-9/12">
+      <img className="w-100" src={props.data["imgUrl"]} />
       <div>{props.data["mainHeader"]}</div>
       <div>Small info space</div>
       <div>{props.data["introText"]}</div>

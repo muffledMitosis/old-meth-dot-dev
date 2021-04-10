@@ -17,13 +17,11 @@ function BlogPage(){
     .catch(e=>console.log(e));
 
   let elem = (
-    <div className="main-bg-div">
+    <div className="main-bg-div overflow-y-scroll">
       <Header />
-      <div>
-        <ul className="general-text">
-          {blogs.map(blog => <li key={blog["mainHeader"]}><BlogCard data={blog} /></li>)}
-        </ul>
-      </div>
+        <div className="general-text grid gird-cols-1 lg:grid-cols-2 border justify-items-center">
+          {blogs.map(blog => <div key={blog["mainHeader"]}><BlogCard data={blog} /></div>)}
+        </div>
     </div>
   );
 
