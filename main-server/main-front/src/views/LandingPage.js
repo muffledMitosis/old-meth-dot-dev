@@ -5,6 +5,9 @@ import Header from '../widgets/Header';
 import ProfilePic from '../assets/profilepic.png';
 import TLArt from '../assets/tl-art.svg';
 
+// TODO: Add cool star effect using canvas
+// TODO: Finish-up about page so ppl can contact you properly
+
 // const canvasDraw = (context) => {
 //     context.fillStyle = '#0000FF';
 //     context.beginPath();

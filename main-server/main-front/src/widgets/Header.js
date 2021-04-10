@@ -5,6 +5,8 @@ import {FiTwitter, FiGithub} from 'react-icons/fi';
 
 let sections = ["Projects", "Blog", "About"];
 
+// TODO: Implement mobile view where it collapses XD
+
 function Header() {
   let elem = (
     <div className="">

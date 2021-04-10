@@ -1,4 +1,6 @@
 function BlogCard(props){
+
+  // TODO: Add proper styles and cursor effects
   let elem = (
     <div className="w-9/12">
       <img className="w-100" src={props.data["imgUrl"]} />

@@ -20,4 +20,5 @@ firebase.analytics();
 
 let db = firebase.firestore();
 
+// TODO: Export Analytics
 export {db};

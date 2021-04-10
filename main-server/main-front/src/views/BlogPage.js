@@ -3,6 +3,8 @@ import {db} from '../utils/fb';
 import BlogCard from '../widgets/BlogCard';
 import Header from "../widgets/Header";
 
+// TODO: Fix alignment issues
+
 function BlogPage(){
 
   let blogRef = db.collection("blog_posts");
