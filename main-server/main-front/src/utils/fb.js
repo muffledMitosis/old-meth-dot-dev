@@ -16,9 +16,8 @@ var firebaseConfig = {
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
-firebase.analytics();
 
+let analytics = firebase.analytics();
 let db = firebase.firestore();
 
-// TODO: Export Analytics
-export {db};
+export {db, analytics};
