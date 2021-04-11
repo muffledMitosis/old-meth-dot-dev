@@ -1,12 +1,12 @@
 function BlogCard(props){
 
-  // TODO: Add proper styles and cursor effects
+  // TODO: Add proper styles
   let elem = (
-    <div className="w-9/12">
-      <img className="w-100" src={props.data["imgUrl"]} />
-      <div>{props.data["mainHeader"]}</div>
-      <div>Small info space</div>
-      <div>{props.data["introText"]}</div>
+    <div className="w-8/12 cursor-pointer">
+      <img className="pl-4 mb-6 w-100" src={props.data["imgUrl"]} />
+      <div className="card-h font-light text-2xl">{props.data["mainHeader"]}</div>
+      <div>{String(props.data["timestamp"])}</div>
+      <div className="general-text font-thin text-xs">{props.data["introText"]}</div>
     </div>
   );
 
