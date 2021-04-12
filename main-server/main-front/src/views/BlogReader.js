@@ -1,6 +1,17 @@
 import { useHistory, useParams } from 'react-router-dom'
+import Header from '../widgets/Header';
 
 // TODO: add markdown parser to display claps and stuff
+
+function RenderBlog(data){
+  let elem = (
+    <div>
+
+    </div>
+  );
+
+  return elem;
+}
 
 function BlogReader(){
 
@@ -8,7 +19,8 @@ function BlogReader(){
 
   let elem = (
     <div className="main-bg-div general-text">
-      {id}
+      <Header />
+      {RenderBlog(id)}
     </div>
   );
 
