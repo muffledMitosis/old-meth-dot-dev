@@ -7,6 +7,24 @@
     background: linear-gradient(231.84deg, #040B22 3.15%, #252935 94.07%);
 }
 
+@font-face {
+    font-family: 'Lucidia Console';
+    src: url('./assets/Lucida\ Console\ Regular.ttf') format('truetype');
+}
+
+/* ################################### MARKDOWN VIEW ########################################### */
+
+.md-view {
+    color: white;
+    font-family: 'Lucidia Console';
+}
+
+.md-view > h1 {color: #D7FF67; font-size: xx-large;}
+.md-view > h2 {color: #D7FF67; font-size: x-large;}
+.md-view > h3 {color: #D7FF67; font-size: larger;}
+
+/* ################################### MARKDOWN VIEW ########################################### */
+
 @tailwind components;
 
 .main-bg-div {
