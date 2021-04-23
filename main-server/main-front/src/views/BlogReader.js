@@ -4,8 +4,9 @@ import ReactMarkdown from 'react-markdown';
 import { useHistory, useParams } from 'react-router-dom'
 import Header from '../widgets/Header';
 import { db } from '../utils/fb';
+import gfm from 'remark-gfm';
 
-// TODO: add markdown parser to display claps and stuff
+// display claps and stuff
 
 function RenderBlog(data){
   console.log(data);
@@ -20,14 +21,20 @@ function RenderBlog(data){
   ## New topic
   explenation of new topic lmao
 
-
-
-  * Lists
+  ### Lists
   * [ ] todo
   * [x] done
   
+  ---
+   
+  ### A table:
+ 
+  | a | b |
+  | - | - |
+  | test | d |
+  
   `;
-  return <ReactMarkdown className="md-view">{dt}</ReactMarkdown>
+  return <ReactMarkdown className="md-view" plugins={[gfm]}>{dt}</ReactMarkdown>
 }
 
 function BlogReader(){

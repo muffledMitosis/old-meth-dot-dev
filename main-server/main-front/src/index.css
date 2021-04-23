@@ -22,6 +22,10 @@
 .md-view > h1 {color: #D7FF67; font-size: xx-large;}
 .md-view > h2 {color: #D7FF67; font-size: x-large;}
 .md-view > h3 {color: #D7FF67; font-size: larger;}
+.md-view > hr {background-color: #D7FF67; margin: 1rem 2rem;}
+.md-view > table, th, td {border: 1px solid white;}
+.md-view > blockquote {border-left: 5px solid #ccc; padding: 1rem; background: rgba(0, 0, 0, 0.25); display: inline; margin: 1rem 0rem;}
+.md-view > blockquote p {display: inline;}
 
 /* ################################### MARKDOWN VIEW ########################################### */
 
