@@ -1,29 +1,12 @@
-import { useState } from 'react';
-import {db} from '../utils/fb';
-import BlogCard from '../widgets/BlogCard';
 import Header from "../widgets/Header";
+import ContentPage from '../widgets/ContentPage';
 
 function BlogPage(){
-
-  let blogRef = db.collection("blog_posts");
-  const [blogs, setBlogs] = useState([]);
-
-  blogRef.get()
-    .then(querySnapshot=>{
-      let docs = [];
-      querySnapshot.forEach(doc=>docs.push(doc.data()));
-      querySnapshot.forEach(doc=>docs.push(doc.data()));
-      querySnapshot.forEach(doc=>docs.push(doc.data()));
-      setBlogs(docs);
-    })
-    .catch(e=>console.log(e));
 
   let elem = (
     <div className="main-bg-div overflow-y-scroll scrollbar scrollbar-thumb-rounded-md scrollbar-thumb-mdd-green-strong scrollbar-thin scrollbar-track-gray-800">
       <Header />
-        <div className="general-text grid gird-cols-1 lg:grid-cols-2">
-          {blogs.map(blog => <div className="p-4 pl-10 pt-10" key={blog["mainHeader"]}><BlogCard data={blog} /></div>)}
-        </div>
+      <ContentPage contentRefName="blog_posts" contentType="blog-post" />
     </div>
   );
 
