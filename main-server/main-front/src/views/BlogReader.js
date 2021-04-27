@@ -10,31 +10,7 @@ import gfm from 'remark-gfm';
 
 function RenderBlog(data){
   console.log(data);
-
-  let dt = `
-  # This is a H1
-  ## This is a H2 
-  ### This is a H3
-
-  some paragraph trying to *explain* stuff **pretty important** do line breaks work? guess so lmao
-
-  ## New topic
-  explenation of new topic lmao
-
-  ### Lists
-  * [ ] todo
-  * [x] done
-  
-  ---
-   
-  ### A table:
- 
-  | a | b |
-  | - | - |
-  | test | d |
-  
-  `;
-  return <ReactMarkdown className="md-view" plugins={[gfm]}>{dt}</ReactMarkdown>
+  return <ReactMarkdown className="md-view" plugins={[gfm]}>{data}</ReactMarkdown>
 }
 
 function BlogReader(){
@@ -47,7 +23,13 @@ function BlogReader(){
   if(!blogData){
     blogRef.get()
     .then(doc=>{
-      setBlogData(doc.data());
+      // setBlogData(doc.data());
+      fetch(doc.data()["contentBlobLocation"])
+        .then(res=>{
+          res.text().then(text=>{
+            setBlogData(text);
+          });
+        }).catch(e=>console.log(e));
     }).catch(e=>console.log(e));
   }
 
