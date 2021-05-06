@@ -5,6 +5,7 @@ import { useHistory, useParams } from 'react-router-dom'
 import Header from '../widgets/Header';
 import { db } from '../utils/fb';
 import gfm from 'remark-gfm';
+import { text } from 'body-parser';
 
 // display claps and stuff
 
@@ -23,13 +24,17 @@ function BlogReader(){
   if(!blogData){
     blogRef.get()
     .then(doc=>{
-      // setBlogData(doc.data());
-      fetch(doc.data()["contentBlobLocation"])
-        .then(res=>{
-          res.text().then(text=>{
-            setBlogData(text);
-          });
-        }).catch(e=>console.log(e));
+      console.log(doc.data()["contentBlobLocation"]);
+      
+      var xhr = new XMLHttpRequest();
+      xhr.responseType = 'json'; 
+      xhr.onload = function(event) {
+        var json= xhr.response;
+        console.log(json);      // now you read the file content
+      };
+      xhr.open('GET', doc.data()["contentBlobLocation"]);
+      xhr.send();
+
     }).catch(e=>console.log(e));
   }
 
