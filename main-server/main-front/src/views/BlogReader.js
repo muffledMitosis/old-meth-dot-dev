@@ -27,10 +27,11 @@ function BlogReader(){
       console.log(doc.data()["contentBlobLocation"]);
       
       var xhr = new XMLHttpRequest();
-      xhr.responseType = 'json'; 
+      xhr.responseType = 'text'; 
       xhr.onload = function(event) {
-        var json= xhr.response;
-        console.log(json);      // now you read the file content
+        var md_text= xhr.response;
+        console.log(md_text);      // now you read the file content
+        setBlogData(md_text);
       };
       xhr.open('GET', doc.data()["contentBlobLocation"]);
       xhr.send();
