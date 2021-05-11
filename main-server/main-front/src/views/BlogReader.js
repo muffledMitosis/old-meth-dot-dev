@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { render } from '@testing-library/react';
 import ReactMarkdown from 'react-markdown';
+import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter';
+import {dark} from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { useHistory, useParams } from 'react-router-dom'
 import Header from '../widgets/Header';
 import { db } from '../utils/fb';
@@ -11,7 +13,19 @@ import { text } from 'body-parser';
 
 function RenderBlog(data){
   console.log(data);
-  return <ReactMarkdown className="md-view" plugins={[gfm]}>{data}</ReactMarkdown>
+
+  const components = {
+    code({node, inline, className, children, ...props}) {
+      const match = /language-(\w+)/.exec(className || '')
+      return !inline && match ? (
+        <SyntaxHighlighter style={dark} language={match[1]} PreTag="div" children={String(children).replace(/\n$/, '')} {...props} />
+      ) : (
+        <code className={className} {...props} />
+      )
+    }
+  }
+
+  return <ReactMarkdown components={components} className="md-view" plugins={[gfm]}>{data}</ReactMarkdown>
 }
 
 function BlogReader(){
