@@ -40,7 +40,7 @@ function BlogReader(){
   }
 
   let elem = (
-    <div className="main-bg-div">
+    <div className="main-bg-div overflow-y-scroll">
       <Header />
       {RenderBlog(blogData)}
     </div>
