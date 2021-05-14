@@ -15,6 +15,7 @@
 /* ################################### MARKDOWN VIEW ########################################### */
 
 .md-view {
+    all: revert;
     color: white;
     font-family: 'Lucidia Console';
     margin-left: 10rem;
