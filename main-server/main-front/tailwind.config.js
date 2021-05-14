@@ -12,7 +12,8 @@ module.exports = {
         "mdd-blue-light": "#67A4FF"
       },
       fontFamily: {
-        'fira-code': ['Fira Code', 'monospace']
+        'fira-code': ['Fira Code', 'monospace'],
+        'montserrat': ['Montserrat', 'sans-serif']
       },
       inset: {
         '1/2': '50%'
@@ -20,7 +21,10 @@ module.exports = {
     },
   },
   variants: {
+    scrollbar: ['rounded'],
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    require('tailwind-scrollbar'),
+  ],
 }

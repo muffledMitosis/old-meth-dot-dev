@@ -15,7 +15,7 @@ function getIcon(name) {
 
 function LandingSection(props) {
     let elem = (
-        <div className="flex items-center content-center space-x-2 cursor-pointer" onClick={()=>window.location.href=props.name.toLowerCase()}>
+        <div className="flex items-center content-center space-x-2 cursor-pointer" onClick={()=>window.location.href=(window.location.origin+"/"+props.name.toLowerCase())}>
             {getIcon(props.name)}
             <div className="text-white font-fira-code">{props.name}</div>
         </div>
