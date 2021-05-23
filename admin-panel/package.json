@@ -1,0 +1,11 @@
+{
+  "name": "admin-panel",
+  "version": "1.0.0",
+  "description": "A interface to edit mdd projects and blog posts",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Meth Munindradasa",
+  "license": "ISC"
+}
