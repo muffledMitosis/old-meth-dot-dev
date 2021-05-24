@@ -9,6 +9,7 @@
   "author": "Meth Munindradasa",
   "license": "ISC",
   "dependencies": {
+    "fs-extra": "^10.0.0",
     "inquirer": "^8.1.0"
   }
 }
