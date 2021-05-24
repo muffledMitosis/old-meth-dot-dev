@@ -7,10 +7,12 @@ const utils = require('./utils');
 */
 
 async function creationFunction(){
-	// TODO: Get and base info and create data in Firestore
 	let options = await utils.getBaseInfo();
-	console.log(options);
-	// Create local folder structure for temp files
+	const typeFlag = (options["type"] == 'blog') ? 'blog' : 'proj';
+	const fPath = `./work/${typeFlag}/${options['mainHeader']}/content.md`;
+	fs.outputFileSync(fPath, '');
+	console.log(`Ready to edit \"${fPath}\"`);
+	// TODO: Create Firestore document
 }
 
 async function editFunction(){
@@ -18,7 +20,7 @@ async function editFunction(){
 	// ask for edit specifics => title, main image, content
 }
 
-async function mainPromt(){
+async function mainPrompt(){
 	let operation = await inquirer.prompt(
 		{
 			type: 'expand', name: 'opcode', message: 'What would you like to do?',
@@ -36,4 +38,4 @@ async function mainPromt(){
 
 fs.ensureDirSync('./work/proj');
 fs.ensureDirSync('./work/blog');
-mainPromt();
+mainPrompt();
