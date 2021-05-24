@@ -1,10 +1,7 @@
 const fs = require('fs-extra');
 const inquirer = require('inquirer');
 const utils = require('./utils');
-
-/*
- The program will download appropriate files when editing, reupload them and change firestore data 
-*/
+const fb = require('./fb-admin');
 
 async function creationFunction(){
 	let options = await utils.getBaseInfo();
