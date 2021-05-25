@@ -8,6 +8,7 @@ admin.initializeApp({
 let fb = {};
 
 fb.db = admin.firestore();
+fb.admin = admin;
 
 
 module.exports = fb;

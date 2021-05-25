@@ -3,13 +3,29 @@ const inquirer = require('inquirer');
 const utils = require('./utils');
 const fb = require('./fb-admin');
 
+const workPath = './work';
+
 async function creationFunction(){
 	let options = await utils.getBaseInfo();
+
 	const typeFlag = (options["type"] == 'blog') ? 'blog' : 'proj';
-	const fPath = `./work/${typeFlag}/${options['mainHeader']}/content.md`;
+	const docPath = `${typeFlag}/${options['mainHeader']}/content.md`;
+	const fPath = `${workPath}/${docPath}`;
 	fs.outputFileSync(fPath, '');
+	
 	console.log(`Ready to edit \"${fPath}\"`);
-	// TODO: Create Firestore document
+
+	const id = btoa(options['mainHeader']);
+	const docCreation = await fb.db.collection(typeFlag).doc(id).set({
+		'clapCount' : 0,
+		'contentBlobLocation': "",
+		'imgUrl': options["imgURL"],
+		'introText': options['introText'],
+		'mainHeader': options['mainHeader'],
+		'id': id,
+		'timestamp': fb.admin.firestore.FieldValue.serverTimestamp()
+	});
+	
 }
 
 async function editFunction(){

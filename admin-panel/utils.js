@@ -15,6 +15,9 @@ toBeExported.getBaseInfo = async ()=>{
             name: 'mainHeader', message: 'Main Header?'
         },
         {
+            name: 'introText', message: 'Intro Text?'
+        },
+        {
             name: 'imgURL', message: 'Image URL?'
         }
     ]);
