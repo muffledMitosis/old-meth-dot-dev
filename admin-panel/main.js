@@ -6,7 +6,7 @@ async function mainPrompt(){
 	let operation = await inquirer.prompt(
 		{
 			type: 'expand', name: 'opcode', message: 'What would you like to do?',
-			choices: [{key:'e', value:'edit'}, {key:'c', value:'create'}, {key: 'u', value: 'upload'}]
+			choices: [{key:'e', value:'edit'}, {key:'c', value:'create'}, {key: 'u', value: 'update'}]
 		}
 	);
 
@@ -15,6 +15,9 @@ async function mainPrompt(){
 	}
 	else if(operation.opcode == 'edit'){
 		branches.editFunction();
+	}
+	else if(operation.opcode == 'update'){
+		branches.updateFunction();
 	}
 }
 
