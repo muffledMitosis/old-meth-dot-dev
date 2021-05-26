@@ -15,11 +15,14 @@ async function update(){
 	}
 
 	console.log("Updating...");
-	utils.uploadFile(`./work/${toBeUploaded}/content.md`, `${toBeUploaded}/content.md`);
-	utils.uploadFile().catch(console.error);
+	await utils.uploadFile(`./work/${toBeUploaded}/content.md`, `${toBeUploaded}/content.md`).catch(console.error);
 
-	// TODO: Find equivalent file in storage, delete it, upload current one
-	// TODO: Update appropriate Firestore document
+	let [type, id] = toBeUploaded.split('/');
+	id = btoa(id);
+
+	await fb.db.collection(type).doc(id).update({
+		"contentBlobLocation": fb.bucket.file(`${toBeUploaded}/content.md`).publicUrl()
+	});
 }
 
 async function creationFunction(){

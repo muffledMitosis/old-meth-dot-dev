@@ -6,6 +6,7 @@ let toBeExported = {};
 
 toBeExported.uploadFile = async (src, dest)=> {
     await fb.bucket.upload(src, {destination: dest});
+    await fb.bucket.file(dest).makePublic();
 }
 
 toBeExported.getBaseInfo = async ()=>{
@@ -52,7 +53,7 @@ toBeExported.getUpdateInfo = async ()=>{
 }
 
 toBeExported.confirmation = async (wut)=>{
-    let ans = inquirer.prompt([
+    let ans = await inquirer.prompt([
         {
           type: 'expand',
           name: 'yesno',
