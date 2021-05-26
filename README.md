@@ -1,5 +1,3 @@
-## How to install
+# Full codebase of meth-dot-dev
 
-install nginx, certob for nginx, nodejs
--> sudo snap install --classic certbot
--> sudo cp ./nginx.conf /etc/nginx/
+This is the codebase for my personal blog/website
