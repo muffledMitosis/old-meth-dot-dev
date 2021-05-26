@@ -23,6 +23,8 @@ async function update(){
 	await fb.db.collection(type).doc(id).update({
 		"contentBlobLocation": fb.bucket.file(`${toBeUploaded}/content.md`).publicUrl()
 	});
+
+	console.log("Done!");
 }
 
 async function creationFunction(){
