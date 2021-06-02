@@ -17,7 +17,7 @@ async function mainPrompt(){
 		branches.editFunction();
 	}
 	else if(operation.opcode == 'update'){
-		branches.updateFunction();
+		branches.pushFunction();
 	}
 }
 

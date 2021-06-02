@@ -9,6 +9,7 @@
   "author": "Meth Munindradasa",
   "license": "ISC",
   "dependencies": {
+    "file-type": "^16.5.0",
     "firebase-admin": "^9.8.0",
     "fs-extra": "^10.0.0",
     "inquirer": "^8.1.0"
