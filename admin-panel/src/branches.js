@@ -5,7 +5,7 @@ const fs = require('fs-extra');
 const branches = {};
 const workPath = './work';
 
-async function update(){
+async function pushFunction(){
 	let toBeUploaded = await utils.getUpdateInfo();
 	let ans = await utils.confirmation(`Do you want to update ${toBeUploaded}`);
 
@@ -58,6 +58,6 @@ async function editFunction(){
 
 branches.editFunction = editFunction;
 branches.creationFunction = creationFunction;
-branches.updateFunction = update;
+branches.pushFunction = pushFunction;
 
 module.exports = branches;
