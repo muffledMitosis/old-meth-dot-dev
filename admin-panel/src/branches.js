@@ -14,17 +14,22 @@ async function pushFunction(){
 		return;
 	}
 
-	console.log("Updating...");
-	await utils.uploadFile(`./work/${toBeUploaded}/content.md`, `${toBeUploaded}/content.md`).catch(console.error);
+	let pushCategory = await utils.getPushCategory();
 
-	let [type, id] = toBeUploaded.split('/');
-	id = btoa(id);
-
-	await fb.db.collection(type).doc(id).update({
-		"contentBlobLocation": fb.bucket.file(`${toBeUploaded}/content.md`).publicUrl()
-	});
-
-	console.log("Done!");
+	switch(pushCategory){
+		case 'content':
+			await utils.pushContent(toBeUploaded);
+			break;
+		case 'image':
+			utils.pushImage(toBeUploaded);
+			break;
+		case 'both':
+			utils.pushContent(toBeUploaded);
+			utils.pushImage(toBeUploaded);
+			break;
+		default:
+			console.log("Invalid pushCategory");
+	}
 }
 
 async function creationFunction(){

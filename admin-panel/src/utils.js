@@ -1,4 +1,5 @@
 const fs = require('fs-extra');
+const FileType = require('file-type');
 const inquirer = require('inquirer');
 const fb = require('./fb-admin');
 
@@ -50,6 +51,77 @@ toBeExported.getUpdateInfo = async ()=>{
     ]);
 
     return `${sPath}/${file_select.file}`;
+}
+
+toBeExported.getPushCategory = async ()=> {
+    let ans = await inquirer.prompt([
+        {
+          type: 'expand',
+          name: 'pushCat',
+          message: 'What do you want to push?',
+          choices: [
+            {
+              key: 'i',
+              value: 'image',
+            },
+            {
+              key: 'c',
+              value: 'content',
+            },
+            {
+                key: 'b',
+                value: 'both'
+            }
+          ],
+        },
+      ]);
+    return ans.pushCat;
+}
+
+toBeExported.pushContent = async (toBeUploaded) => {
+	console.log("Pushing content...");
+	await toBeExported.uploadFile(`./work/${toBeUploaded}/content.md`, `${toBeUploaded}/content.md`).catch(console.error);
+	let [type, id] = toBeUploaded.split('/');
+	id = btoa(id);
+	await fb.db.collection(type).doc(id).update({
+		"contentBlobLocation": fb.bucket.file(`${toBeUploaded}/content.md`).publicUrl()
+	});
+    console.log("Done pushing content");
+}
+
+toBeExported.pushImage = async (toBeUploaded)=> {
+    console.log("Pushing Image...");
+    let basePath = `./work/${toBeUploaded}`;
+    let files = fs.readdirSync(basePath);
+    let imgExists = false;
+    let imgFile = "";
+    // Loops through all files in dir, grabs the first image detected, ignores others
+    for(let i=0; i<files.length; i++){
+        let fileType = ""; 
+        try {
+            fileType = (await FileType.fromFile(`${basePath}/${files[i]}`)).mime;
+        } catch (error) {
+        }
+        if(fileType.includes('image')){
+            imgExists=true;
+            imgFile = files[i];
+            break;
+        }
+    }
+
+    if(!imgExists){
+        console.log("Image Not Found"); 
+        return;
+    }
+
+    await toBeExported.uploadFile(`${basePath}/${imgFile}`, `${toBeUploaded}/${imgFile}`).catch(console.error);
+
+	let [type, id] = toBeUploaded.split('/');
+	id = btoa(id);
+	await fb.db.collection(type).doc(id).update({
+		"imgUrl": fb.bucket.file(`${toBeUploaded}/${imgFile}`).publicUrl()
+	});
+    console.log("Done uploading Image");
 }
 
 toBeExported.confirmation = async (wut)=>{
