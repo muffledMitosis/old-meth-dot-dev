@@ -1,0 +1,29 @@
+{
+  "name": "mdd",
+  "version": "1.0.0",
+  "private": true,
+  "description": "mdd",
+  "author": "Meth Munindradasa",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "gatsby": "^3.9.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-icons": "^4.2.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.3.1",
+    "gatsby-plugin-postcss": "^4.9.0",
+    "postcss": "^8.3.5",
+    "tailwindcss": "^2.2.4"
+  }
+}
