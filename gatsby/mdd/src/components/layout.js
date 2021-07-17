@@ -4,7 +4,7 @@ import NavClickable from './widgets/nav_clickable';
 const Layout = ({children}) => {
 	return (
 		<main>
-			<NavClickable name="Projects" icon="FiActivity" onClickLocation="google.com" color="text-mdd-red-strong"/>
+			<NavClickable name="Projects" onClickLocation="google.com" color="text-mdd-red-strong"/>
 
 			{children}
 		</main>
