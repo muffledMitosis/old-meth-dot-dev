@@ -1,4 +1,5 @@
 node_modules/
+.cache/
 main-server/main-front/.eslintcache
 work/
 methdotdev-key.json
