@@ -11,12 +11,12 @@ module.exports = {
       {
         name: "Blog",
         onClickLocation: '/blog',
-        color: "mdd-blue-strong",
+        color: "text-mdd-blue-strong",
       },
       {
         name: "About",
         onClickLocation: '/about',
-        color: "mdd-green-strong",
+        color: "text-mdd-green-strong",
       },
     ]
   },
