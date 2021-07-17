@@ -13,7 +13,7 @@ body {
 
 @font-face {
     font-family: 'Lucidia Console';
-    src: url('../assets/Lucida\ Console\ Regular.ttf') format('truetype');
+    src: url('../assets/fonts/Lucida\ Console\ Regular.ttf') format('truetype');
 }
 
 /* ################################### MARKDOWN VIEW ########################################### */
