@@ -7,8 +7,17 @@ module.exports = {
         name: "Projects",
         onClickLocation: '/projects',
         color: "text-mdd-red-strong",
-        icon: ""
-      }
+      },
+      {
+        name: "Blog",
+        onClickLocation: '/blog',
+        color: "mdd-blue-strong",
+      },
+      {
+        name: "About",
+        onClickLocation: '/about',
+        color: "mdd-green-strong",
+      },
     ]
   },
   plugins: [
