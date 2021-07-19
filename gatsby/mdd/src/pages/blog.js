@@ -2,6 +2,9 @@ import { Link, graphql} from 'gatsby';
 import * as React from 'react';
 import Layout from '../components/layout';
 
+// TODO: Make list look pretty
+// TODO: Work on images
+
 const BlogPage = ({data: {allMarkdownRemark: {edges}}}) => {
   const posts = edges
     .filter(edge => !!edge.node.frontmatter.date)
@@ -9,7 +12,6 @@ const BlogPage = ({data: {allMarkdownRemark: {edges}}}) => {
   return(
     <Layout>
       <div className="h-screen">
-				{/* Show List of blogs */}
         {posts}
     	</div>
     </Layout>

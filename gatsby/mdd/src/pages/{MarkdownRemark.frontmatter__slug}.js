@@ -2,6 +2,8 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 
+// TODO: Fix alignment issues
+
 export default function Template({
   data, // this prop will be injected by the GraphQL query below.
 }) {
@@ -11,8 +13,6 @@ export default function Template({
 		<Layout>
 			<div className="blog-post-container h-screen">
 				<div className="blog-post">
-					{/* <h1>{frontmatter.title}</h1>
-					<h2>{frontmatter.date}</h2> */}
 					<div
 						className="blog-post-content md-view"
 						dangerouslySetInnerHTML={{ __html: html }}
