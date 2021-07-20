@@ -1,18 +1,32 @@
 import { Link, graphql} from 'gatsby';
 import * as React from 'react';
 import Layout from '../components/layout';
+import BlogCard from '../components/widgets/blog_card';
 
 // TODO: Make list look pretty
-// TODO: Work on images
 
 const BlogPage = ({data: {allMarkdownRemark: {edges}}}) => {
+
+  const BC = (edge) => {
+    return <BlogCard 
+      gotoLink={edge.node.frontmatter.slug}
+      img={edge.node.frontmatter.imageLocation.childImageSharp.fluid}
+      mainHeader={edge.node.frontmatter.title}
+      timeStamp={edge.node.frontmatter.date}
+      introText={edge.node.frontmatter.intro}
+    />
+  }
+
   const posts = edges
     .filter(edge => !!edge.node.frontmatter.date)
-    .map(edge => <Link to={edge.node.frontmatter.slug}>{edge.node.frontmatter.title}</Link>)
+    .map(edge => BC(edge));
+
   return(
     <Layout>
       <div className="h-screen">
-        {posts}
+        <div className="general-text grid gird-cols-1 lg:grid-cols-2">
+          {posts}
+        </div>
     	</div>
     </Layout>
   );
@@ -29,6 +43,14 @@ query BlogListQ {
           date
           slug
           title
+          intro
+          imageLocation {
+             childImageSharp {
+            fluid(maxWidth: 800) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+          }
         }
       }
     }
