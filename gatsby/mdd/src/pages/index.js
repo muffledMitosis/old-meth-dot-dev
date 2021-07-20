@@ -2,6 +2,11 @@ import { StaticImage } from 'gatsby-plugin-image';
 import * as React from 'react';
 import Layout from '../components/layout';
 
+// TODO: Look into hosting
+// TODO: Optimize images
+// TODO: Configure images
+// TODO: Clean up git repo, make it presentable
+
 const IndexPage = () => {
   return(
     <Layout>
