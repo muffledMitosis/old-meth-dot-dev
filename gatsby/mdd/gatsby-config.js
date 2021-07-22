@@ -29,14 +29,14 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `blog-posts`,
-        path: `${__dirname}/src/posts/blogs/`
+        path: `${__dirname}/posts/blogs/`
       }
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `blog-images`,
-        path: `${__dirname}/src/posts/blogs/images/`
+        path: `${__dirname}/posts/blogs/images/`
       }
     },
     `gatsby-transformer-remark`
