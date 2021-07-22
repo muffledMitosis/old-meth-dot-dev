@@ -1,20 +1,20 @@
-import { Link, graphql} from 'gatsby';
+import {graphql} from 'gatsby';
 import * as React from 'react';
 import Layout from '../components/layout';
 import BlogCard from '../components/widgets/blog_card';
 
-// TODO: Make list look pretty
-
 const BlogPage = ({data: {allMarkdownRemark: {edges}}}) => {
 
   const BC = (edge) => {
-    return <BlogCard 
-      gotoLink={edge.node.frontmatter.slug}
-      img={edge.node.frontmatter.imageLocation.childImageSharp.fluid}
-      mainHeader={edge.node.frontmatter.title}
-      timeStamp={edge.node.frontmatter.date}
-      introText={edge.node.frontmatter.intro}
-    />
+    return <div className="p-4 pl-10 pt-10">
+      <BlogCard 
+        gotoLink={edge.node.frontmatter.slug}
+        img={edge.node.frontmatter.imageLocation.childImageSharp.fluid}
+        mainHeader={edge.node.frontmatter.title}
+        timeStamp={edge.node.frontmatter.date}
+        introText={edge.node.frontmatter.intro}
+      />
+    </div>
   }
 
   const posts = edges
@@ -23,7 +23,7 @@ const BlogPage = ({data: {allMarkdownRemark: {edges}}}) => {
 
   return(
     <Layout>
-      <div className="h-screen">
+      <div className="min-h-screen">
         <div className="general-text grid gird-cols-1 lg:grid-cols-2">
           {posts}
         </div>
