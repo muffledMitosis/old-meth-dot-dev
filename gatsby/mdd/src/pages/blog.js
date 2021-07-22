@@ -18,7 +18,7 @@ const BlogPage = ({data: {allMarkdownRemark: {edges}}}) => {
   }
 
   const posts = edges
-    .filter(edge => !!edge.node.frontmatter.date)
+    .filter(edge => edge.node.frontmatter.type == "blog")
     .map(edge => BC(edge));
 
   return(
@@ -41,6 +41,7 @@ query BlogListQ {
       node {
         frontmatter {
           date
+          type
           slug
           title
           intro
