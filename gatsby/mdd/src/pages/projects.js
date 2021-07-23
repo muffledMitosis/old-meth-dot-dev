@@ -9,7 +9,7 @@ const ProjectsPage = ({data: {allMarkdownRemark: {edges}}}) => {
     return <ProjectCard
 			gotoLink={edge.node.frontmatter.slug}
 			img={edge.node.frontmatter.imageLocation.childImageSharp.fluid}
-			mainHeader={edge.node.frontmatter.title}
+			projectName={edge.node.frontmatter.title}
 			introText={edge.node.frontmatter.intro}
 		/>
   }
@@ -21,7 +21,7 @@ const ProjectsPage = ({data: {allMarkdownRemark: {edges}}}) => {
   return(
     <Layout>
       <div className="min-h-screen">
-        <div className="general-text grid gird-cols-1 lg:grid-cols-2">
+        <div className="mt-4 general-text grid gird-cols-1 lg:grid-cols-2 lg:px-32">
           {posts}
         </div>
     	</div>
