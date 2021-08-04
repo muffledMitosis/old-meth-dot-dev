@@ -28,7 +28,7 @@ const Layout = ({children}) => {
 
 						<div className="flex flex-row text-lg text-white space-x-3 mr-4 mt-6">
 							<FiInstagram className="cursor-pointer" onClick={() => window.location.href = "https://instagram.com/muffledmitosis"}/>
-							<FiTwitter className="cursor-pointer" />
+							<FiTwitter className="cursor-pointer" onClick={() => window.location.href = "https://twitter.com/muffledmitosis"} />
 							<FiGithub className="cursor-pointer" onClick={() => window.location.href = "https://github.com/muffledMitosis"} />
         		</div>
 					</div>
