@@ -53,6 +53,9 @@ body {
 
 @tailwind components;
 
+body {
+    @apply scrollbar scrollbar-thumb-rounded-md scrollbar-thumb-mdd-green-strong scrollbar-thin scrollbar-track-gray-800;
+}
 .main-bg-div {
     @apply w-screen h-screen main-bg-gradient overflow-hidden;
 }
