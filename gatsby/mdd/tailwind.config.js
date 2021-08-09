@@ -9,7 +9,9 @@ module.exports = {
         "mdd-green-strong": "#81FF55",
         "mdd-green-light": "#D7FF67",
         "mdd-blue-strong": "#55F5FF",
-        "mdd-blue-light": "#67A4FF"
+        "mdd-blue-light": "#67A4FF",
+
+        "mdd-purple-dark": "#470662"
       },
       fontFamily: {
         'fira-code': ['Fira Code', 'monospace'],
