@@ -15,6 +15,12 @@ body {
     background: linear-gradient(51.84deg, #040B22 3.15%, #252935 94.07%);
 }
 
+@media (min-width: 770px) {
+    .clearGradient {
+        background: none;
+    }
+}
+
 @font-face {
     font-family: 'Lucidia Console';
     src: url('../assets/fonts/Lucida\ Console\ Regular.ttf') format('truetype');
