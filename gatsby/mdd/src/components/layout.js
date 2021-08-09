@@ -24,7 +24,7 @@ const Layout = ({children}) => {
 	const navBarFunc = (data) => (
 		<div className="absolute right-0 bg-mdd-purple-dark z-50 md:bg-opacity-0 md:static md:flex md:flex-row md:space-x-4 md:items-center md:justify-end md:mr-6 md:mt-3">
 			<div className="text-white cursor-pointer md:hidden" onClick={() => setNavBarState(!navBarState)}>HAM</div>
-			<div className={(navBarState ? "hidden " : "block ") + "md:block md:flex md:flex-row md:space-x-4 md:items-center md:justify-end"}>
+			<div className={(navBarState ? "hidden " : "block ") + "md:flex md:flex-row md:space-x-4 md:items-center md:justify-end"}>
 				{data.site.siteMetadata.navbarInfo.map(item => <div><NavClickable name={item.name} onClickLocation={item.onClickLocation} color={item.color}/></div>)}
 				<div x-show="open" className="flex flex-row text-lg text-white space-x-3 mr-4">
 					<FiInstagram className="cursor-pointer" onClick={() => window.location.href = "https://instagram.com/muffledmitosis"}/>
