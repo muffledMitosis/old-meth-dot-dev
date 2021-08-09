@@ -1,3 +1,3 @@
-# Full codebase of meth-dot-dev
+# meth-dot-dev
 
-This is the codebase for my personal blog/website
+My personal blog site thingy :D
