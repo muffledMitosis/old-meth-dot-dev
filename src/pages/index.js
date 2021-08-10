@@ -9,7 +9,7 @@ const IndexPage = () => {
   return(
     <Layout>
       <div className="h-screen">
-        <StaticImage className="absolute right-0 bottom-0 w-1/2 md:w-1/4 pointer-events-none" src="../assets/art/tl-art.svg" />
+        <div className="absolute right-0 bottom-0 w-1/2 md:w-1/4 pointer-events-none"><StaticImage src="../assets/art/tl-art.svg" /></div>
 
             <div className="text-white font-fira-code absolute left-8 md:left-32 top-1/2 transform -translate-y-full md:-translate-y-3/4">
                 <div className="flex flex-row items-center space-x-2"><StaticImage className="w-10 h-10 md:w-24 md:h-24 object-cover rounded-full" src="../assets/images/profilepic.png" /><div className="text-lg md:text-6xl">Hello There 👋</div></div>
