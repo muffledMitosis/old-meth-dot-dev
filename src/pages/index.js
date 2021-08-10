@@ -4,8 +4,6 @@ import Layout from '../components/layout';
 
 // TODO: Look into hosting
 // TODO: Optimize images
-// TODO: Configure images
-// TODO: Clean up git repo, make it presentable
 
 const IndexPage = () => {
   return(
