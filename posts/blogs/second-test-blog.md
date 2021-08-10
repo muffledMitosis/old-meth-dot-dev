@@ -5,6 +5,7 @@ title: "Another test post"
 imageLocation: "../../posts/blogs/images/blog-one.jpg"
 intro: "Just for the lols, another test blog"
 type: "blog"
+tags: ["hello", "world", "thos"]
 ---
 
 # Justs for lols
