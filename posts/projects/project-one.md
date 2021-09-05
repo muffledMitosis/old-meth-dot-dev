@@ -1,11 +1,9 @@
 ---
-slug: "/projects/causality-engine"
-title: "Causality Engine"
+slug: "/projects/placeholder"
+title: "Placeholder"
 imageLocation: "../../posts/blogs/images/blog-one.jpg"
-intro: "An Engine for me to test stuff in"
+intro: "Placeholder"
 type: "proj"
 ---
 
-# lmao aint even funny anymore rip
-
-haha
+# Placeholder
