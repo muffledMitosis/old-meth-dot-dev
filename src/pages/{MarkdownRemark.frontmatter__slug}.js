@@ -11,7 +11,7 @@ export default function Template({
   const { frontmatter, html } = markdownRemark
   return (
 		<Layout>
-			<div className="blog-post-container h-screen">
+			<div className="blog-post-container min-h-screen">
 				<div className="blog-post">
 					<div
 						className="blog-post-content md-view"
