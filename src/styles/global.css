@@ -58,7 +58,7 @@ body {
 
 @media (max-width: 770px) {
     .md-view {margin-left: 5rem; margin-right: 5rem;}
-    .md-view > h1 {color: #ff7167; font-size: xx-large;}
+    /* .md-view > h1 {color: #ff7167; font-size: xx-large;} */
 }
 
 /* ################################### MARKDOWN VIEW ########################################### */
