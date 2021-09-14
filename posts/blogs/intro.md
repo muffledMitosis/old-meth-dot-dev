@@ -48,5 +48,5 @@ ideal, but hey, it works.
 ### 4. What should you expect?
 
 Pretty much a mashup of everything from computer graphics, electronics,
-photography, Linux to Abhidharma, Physics and my random ass thoughts. Expect a
+photography, Linux to Abhidhamma, Physics and my random ass thoughts. Expect a
 post every week or so but don't count on it ;)
