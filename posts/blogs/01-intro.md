@@ -15,7 +15,8 @@ coder blogs where they abandon it in a few months and move on with their lives?
 Hopefully not. I'll be posting regular updates on my ongoing projects and write
 a few blog posts about the things i've learned along the way.
 
-This blog wont be limited to coding but would hopefully cover most my interests
+This blog wont be limited to coding but would hopefully cover most of my
+interests
 
 ### 1. Why do a blog?
 
