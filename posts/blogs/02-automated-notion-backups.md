@@ -11,3 +11,18 @@ tags: ["notion", "notes", "scripting", "automation", "python", "CI/CD"]
 # Automate Your Notion Backups
 
 ## The Crux of the issue
+
+Notion is an amazing note taking app. It's nowhere near perfect but it gets the
+job done. It has a good way of managing data with databases and is a good
+balance between something like Microsoft Excel and traditional note taking apps
+such as OneNote or Evernote.
+
+The issue is your Notion workspaces aren't really accessible to you, as in,
+they pretty much live on Notion servers who knows where (ADD NOTION SERVER
+LOCATION LOL) and that is a big no no for me. I like all my data close to me
+and in multiple locations for redundancy.
+
+Now of course, Notion gives you the ability to export your whole Workspace into
+PDFs or Markdown with one press of a button, but imagine clicking that button
+everyday, sorting all those exports manually, uploa-STOP IT YOU NEANDERTHAL
+we're programmers, we can do better.
