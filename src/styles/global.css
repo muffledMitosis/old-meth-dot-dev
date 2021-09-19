@@ -32,8 +32,8 @@ body {
     all: revert;
     color: white;
     font-family: 'Lucidia Console';
-    margin-left: 10rem;
-    margin-right: 10rem;
+    margin-left: 25rem;
+    margin-right: 25rem;
 }
 
 .md-view > h1 {color: #D7FF67; font-size: xx-large; margin-bottom: 2.5rem; margin-top: 1rem;}
@@ -56,8 +56,20 @@ body {
     background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
 }
 
+@media (max-width: 1500px) {
+    .md-view {
+        margin-left: 16rem;
+        margin-right: 16rem;
+        max-width: 100vw;
+    }
+    /* .md-view > h1 {color: #ff7167; font-size: xx-large;} */
+}
 @media (max-width: 770px) {
-    .md-view {margin-left: 5rem; margin-right: 5rem;}
+    .md-view {
+        margin-left: 5rem;
+        margin-right: 5rem;
+        max-width: 100vw;
+    }
     /* .md-view > h1 {color: #ff7167; font-size: xx-large;} */
 }
 
