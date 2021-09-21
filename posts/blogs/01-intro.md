@@ -15,7 +15,8 @@ coder blogs where they abandon it in a few months and move on with their lives?
 Hopefully not. I'll be posting regular updates on my ongoing projects and write
 a few blog posts about the things i've learned along the way.
 
-This blog wont be limited to coding but would hopefully cover most my interests
+This blog wont be limited to coding but would hopefully cover most of my
+interests
 
 ### 1. Why do a blog?
 
@@ -48,5 +49,5 @@ ideal, but hey, it works.
 ### 4. What should you expect?
 
 Pretty much a mashup of everything from computer graphics, electronics,
-photography, Linux to Abhidharma, Physics and my random ass thoughts. Expect a
+photography, Linux to Abhidhamma, Physics and my random ass thoughts. Expect a
 post every week or so but don't count on it ;)
