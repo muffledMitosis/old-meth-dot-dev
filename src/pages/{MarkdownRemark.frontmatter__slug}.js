@@ -12,7 +12,7 @@ export default function Template({
   const { frontmatter, html } = markdownRemark
   deckDeckGoHighlightElement();
   return (
-		<Layout>
+		<Layout title={frontmatter.title}>
 			<div className="blog-post-container min-h-screen">
 				<div className="blog-post">
 					<div

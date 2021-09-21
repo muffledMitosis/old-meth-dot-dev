@@ -3,8 +3,9 @@ import * as React from 'react';
 import NavClickable from './widgets/nav_clickable';
 import {FiTwitter, FiGithub, FiInstagram} from 'react-icons/fi';
 import {GiHamburgerMenu} from 'react-icons/gi';
+import { Helmet } from "react-helmet"
 
-const Layout = ({children}) => {
+const Layout = ({children, title}) => {
 
 	let nav_querry = graphql`
 				query nav_bar_q {
@@ -43,6 +44,9 @@ const Layout = ({children}) => {
 					{navBarFunc(data)}
 				</React.Fragment>
 			)} />
+			<Helmet>
+				<title>{title}</title>
+      </Helmet>
 			{children}
 		</main>
 	);
