@@ -2,7 +2,7 @@
 slug: "/blog/automate-notion-backups"
 date: "2021-09-14"
 title: "How To Automate Notion Backups"
-imageLocation: "../../posts/blogs/images/intro.webp"
+imageLocation: "../../posts/blogs/images/w-02.png"
 intro: "Here I explain the workings of a script I use to backup my notion"
 type: "blog"
 tags: ["notion", "notes", "scripting", "automation", "python", "CI/CD"]
@@ -13,7 +13,7 @@ tags: ["notion", "notes", "scripting", "automation", "python", "CI/CD"]
 ## The Crux of the issue
 
 Notion is an amazing note taking app. It's nowhere near perfect but it gets the
-job done. It has a good way of managing data with databases which is a great
+job done. It has a good way of managing data with databases with a great
 balance between something like Microsoft Excel and traditional note taking apps
 such as OneNote or Evernote.
 
@@ -76,5 +76,5 @@ we'd have to have a machine up and running 24/7 (or in any other manner) to
 handle script execution. 
 
 I have both scripts run as a [CI/CD](https://docs.gitlab.com/ee/ci/) pipeline
-on GitLab having a time trigger on it, so that it runs everyday at a certain
+on GitLab, having a 'time trigger' on it, so that it runs everyday at a certain
 time.
