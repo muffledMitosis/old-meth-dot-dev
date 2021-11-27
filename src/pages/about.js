@@ -1,11 +1,13 @@
 import * as React from 'react';
+
 import Layout from '../components/layout';
+import TechGlobe from '../components/widgets/tech_globe';
 
 const AboutPage = () => {
   return(
     <Layout>
       <div className="h-screen">
-				stuff about me ig
+        <TechGlobe />
       </div>
     </Layout>
   );

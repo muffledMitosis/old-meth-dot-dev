@@ -48,6 +48,10 @@ body {
 .md-view > p > img {display: block; margin: 2rem auto; width: 50%;}
 .md-view > ol {list-style-type: decimal;}
 
+.tech-globe {
+    border: solid red 1px;
+}
+
 .project-card-gradient {
     position: absolute;
     top: 0;
