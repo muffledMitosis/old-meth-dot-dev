@@ -1,13 +1,12 @@
 import * as React from 'react';
-
 import Layout from '../components/layout';
-import TechGlobe from '../components/widgets/tech_globe';
+import TechScroll from '../components/widgets/tech_scroll';
 
 const AboutPage = () => {
   return(
     <Layout>
       <div className="h-screen">
-        <TechGlobe />
+        <TechScroll />
       </div>
     </Layout>
   );
