@@ -3,11 +3,11 @@ module.exports = {
     siteUrl: "https://www.yourdomain.tld",
     title: "mdd",
     navbarInfo : [
-      {
-        name: "Projects",
-        onClickLocation: '/projects',
-        color: "text-mdd-red-strong",
-      },
+      // {
+      //   name: "Projects",
+      //   onClickLocation: '/projects',
+      //   color: "text-mdd-red-strong",
+      // },
       {
         name: "Blog",
         onClickLocation: '/blog',
