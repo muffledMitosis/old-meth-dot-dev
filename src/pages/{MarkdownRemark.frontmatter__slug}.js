@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
+import { defineCustomElements as deckDeckGoHighlightElement } from "@deckdeckgo/highlight-code/dist/loader";
 
 // TODO: Fix alignment issues
 
@@ -9,9 +10,10 @@ export default function Template({
 }) {
   const { markdownRemark } = data // data.markdownRemark holds your post data
   const { frontmatter, html } = markdownRemark
+  deckDeckGoHighlightElement();
   return (
 		<Layout>
-			<div className="blog-post-container h-screen">
+			<div className="blog-post-container min-h-screen">
 				<div className="blog-post">
 					<div
 						className="blog-post-content md-view"

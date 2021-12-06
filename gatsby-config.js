@@ -46,6 +46,15 @@ module.exports = {
         path: `${__dirname}/posts/projects/`
       }
     },
-    `gatsby-transformer-remark`
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-highlight-code`,
+          },
+        ],
+      },
+    },
   ],
 };
