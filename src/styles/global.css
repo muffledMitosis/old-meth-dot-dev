@@ -48,6 +48,43 @@ body {
 .md-view > p > img {display: block; margin: 2rem auto; width: 50%;}
 .md-view > ol {list-style-type: decimal;}
 
+.about-main-text > .intro {
+    /* font-size: 120%; */
+}
+
+.about-main-text > .intro div:last-child {
+    color: #E7A3FF;
+    letter-spacing: -2px;
+}
+
+.about-main-text > .description {
+    max-width: 32rem;
+}
+
+.about-picture-frame {
+    width: 20rem;
+    height: 30rem;
+}
+
+.tech-globe {
+    border: solid red 1px;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.tech-logo-parent {
+    border: solid red 1px;
+}
+
 .project-card-gradient {
     position: absolute;
     top: 0;

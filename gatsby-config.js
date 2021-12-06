@@ -3,11 +3,11 @@ module.exports = {
     siteUrl: "https://www.yourdomain.tld",
     title: "mdd",
     navbarInfo : [
-      {
-        name: "Projects",
-        onClickLocation: '/projects',
-        color: "text-mdd-red-strong",
-      },
+      // {
+      //   name: "Projects",
+      //   onClickLocation: '/projects',
+      //   color: "text-mdd-red-strong",
+      // },
       {
         name: "Blog",
         onClickLocation: '/blog',
@@ -44,6 +44,13 @@ module.exports = {
       options: {
         name: `projects`,
         path: `${__dirname}/posts/projects/`
+      }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `tech-logos`,
+        path: `${__dirname}/src/assets/art/tech_logos/`
       }
     },
     {
