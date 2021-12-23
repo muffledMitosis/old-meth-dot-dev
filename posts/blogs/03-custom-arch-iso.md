@@ -6,6 +6,7 @@ imageLocation: "../../posts/blogs/images/intro.webp"
 intro: "Here I talk about how I went about building my very own arch based distro"
 type: "blog"
 tags: ["arch", "linux", "operating system", "ricing"]
+pending: true
 ---
 
 <!-- - what arch linux is -->
