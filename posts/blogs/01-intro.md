@@ -6,6 +6,7 @@ imageLocation: "../../posts/blogs/images/intro.webp"
 intro: "Statement of purpose"
 type: "blog"
 tags: ["Intro", "Meth", "About", "Me"]
+pending: false
 ---
 
 # Introduction

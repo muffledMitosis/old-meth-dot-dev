@@ -6,6 +6,7 @@ imageLocation: "../../posts/blogs/images/w-02.png"
 intro: "Here I explain the workings of a script I use to backup my notion"
 type: "blog"
 tags: ["notion", "notes", "scripting", "automation", "python", "CI/CD"]
+pending: false
 ---
 
 # Automate Your Notion Backups
