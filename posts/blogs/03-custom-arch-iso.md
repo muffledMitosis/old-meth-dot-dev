@@ -6,6 +6,7 @@ imageLocation: "../../posts/blogs/images/intro.webp"
 intro: "Here I talk about how I went about building my very own arch based distro"
 type: "blog"
 tags: ["arch", "linux", "operating system", "ricing"]
+pending: true
 ---
 
 <!-- - what arch linux is -->
@@ -24,13 +25,24 @@ ricing my Arch installation was only natural.
 Getting everything just right certainly took loads of time. This is probably
 because customizations not only included editing configuration files, but
 finding programs that work well together too.  Calendars, calculators,
-schedulers, file managers, editors, applets etc.  Coherency is important. Now
-you might ask, why not use a desktop environment *(GNOME/KDE/MATE)* and let it
-handle everything for you? Well, like I said, I loooove pain :\`)
+schedulers, file managers, editors, applets etc. Coherency is important. Why not
+use a desktop environment *(GNOME/KDE/MATE)* and let it handle everything for
+you? Well, like I said, I loooove pain :\`)
 
-**Why build a custom arch iso** instead of managing everything with
-configuration files? Packaging everything into a single installable iso is
-**_waay_** more convenient than fiddling with installation scripts and
-versioning config files, you just mount the iso and install it. It's that
-simple. You have the added bonus of making it a fully offline installer, which
-is also nice.
+Aight, more questions... **Why build a custom arch iso** instead of managing
+everything with configuration files? Packaging everything into a single
+installable iso is **_waay_** more convenient than fiddling with installation
+scripts and versioning config files, you just mount the iso and install it. It's
+that simple, and there's the added bonus of making it a fully offline installer,
+which is also nice. I have the ISO autobuild from source using a CI/CD pipeline
+on GitHub.
+
+The rest of this blog post will talk about everything thats required to build a
+custom arch ISO from scratch. I basically go through the stuff I did to build my
+ISO, similar steps can be take to build your own. The same concepts apply.
+
+## Things you need to know
+
+<!-- directory structure -->
+<!-- tools used -->
+<!-- custom repository setup -->

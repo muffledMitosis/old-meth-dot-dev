@@ -19,6 +19,7 @@ const BlogPage = ({data: {allMarkdownRemark: {edges}}}) => {
 
   const posts = edges
     .filter(edge => edge.node.frontmatter.type == "blog")
+    .filter(edge => !edge.node.frontmatter.pending)
     .map(edge => BC(edge));
 
   return(
@@ -45,6 +46,7 @@ query BlogListQ {
           slug
           title
           intro
+          pending
           imageLocation {
              childImageSharp {
             fluid(maxWidth: 800) {
