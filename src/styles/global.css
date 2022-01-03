@@ -93,6 +93,26 @@ body {
     background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
 }
 
+table, th, tr, td {
+	border: none;
+	border-bottom: 1px gray;
+}
+
+th,
+td {
+	padding: 15px;
+	background-color: #4a4e61;
+	color: #fff;
+}
+
+th {
+	text-align: left;
+}
+
+th {
+		background-color: #a3abd1;
+	}
+
 @media (max-width: 1500px) {
     .md-view {
         margin-left: 16rem;
