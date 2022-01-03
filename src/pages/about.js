@@ -61,7 +61,7 @@ const DB =()=>{
 }
 const TechStack = () => {
   return(
-    <div className='ml-8 md:ml-24'>
+    <div className='ml-4 md:ml-24'>
       <table className='table-auto general-text'>
         <thead>
           <tr><th></th><th><div className='m-2'>Technologies</div></th></tr>
@@ -93,7 +93,7 @@ const AboutPage = () => {
           <PictureFrame className="ml-0 mb-2 md:ml-24 mr-0 md:mr-8 mt-8 md:mt-0" />
           <MainText />
         </div>
-        <div className="text-3xl md:text-4xl general-text mb-8 ml-8 md:ml-24 mt-16">My Goto Tech-Stack</div>
+        <div className="text-3xl md:text-4xl general-text mb-8 ml-4 md:ml-24 mt-16 mr-4">My Goto Tech-Stack</div>
         <TechStack />
       </div>
     </Layout>
