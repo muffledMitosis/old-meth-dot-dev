@@ -98,3 +98,28 @@ implemented. You can stop reading here onwards since this goes into a domain
 beyond driving NeoPixels. Read on for a fun adventure.
 
 ## machine.bitsteam
+
+The NeoPixel driver is implemented using bitstreams. machine.bitstream() is a
+neat little function that lets you shift out bits off of a GPIO with precise
+timing (+/-30ns in the ESPs case). Unfortunately this whole function is
+synchronous ie, code execution will halt until all the bits are shifted.
+
+```python
+machine.bitstream(pin, encoding, timing, data)
+```
+
+The ESP specific implementation can be found at
+[machine_bitstream.c](https://github.com/micropython/micropython/blob/master/ports/esp8266/machine_bitstream.c).
+
+<!-- INSERT SOME CODE MANIPULATING NEOPIXELS -->
+<!-- EXPLAIN THE CODE -->
+
+## An Asynchronous machine.bitstream?
+
+Unfortunately Micropython doesn't implement support for the I2S peripheral of
+the ESP8266 (Availability exists for the ESP32 though). One would have to
+implement this in order to shift bits out of a GPIO asynchronously. Hell even
+[I2C](https://docs.micropython.org/en/latest/esp8266/quickref.html#i2c-bus) is
+implemented using software on the ESP8266.
+
+Who knows, this might be something I would explore in a future blog post ;)
