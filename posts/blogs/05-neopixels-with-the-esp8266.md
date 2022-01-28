@@ -26,7 +26,36 @@ micropython for anything else, figured this might be a good time to do so.
 
 ## A bit about how WS2812s work
 
-<!-- TODO: Do some research on neopixels, variants, explain how they work -->
+The WS2812s are single line driven chainable LEDs, ie they are driven by one
+signal line and can be chained together, like so.
+
+![Signaling](../../posts/blogs/images/05/chaining.png)
+
+VCC is the power pin for the control circuitry, this needs a tiny capacitor to
+smooth out the fluctuations caused by the LED switching.
+
+These LEDs take 8-bit color data and have three channels for Red, Green and Blue
+(There're other variants with more channels for yellow, pure white and so on).
+So it takes 24 bits to store information needed for 1 LED. The data composition
+looks like so. Note that the color ordering is GRB and the most significant bit
+is transmitted first.
+
+![Data Composition](../../posts/blogs/images/05/data-composition.png)
+
+Now lets talk about the signalling of 0s and 1s. Honestly I'll just slap in a
+picture of the signalling from the data sheet itself since it indicates
+everything pretty clearly.
+
+![Signaling](../../posts/blogs/images/05/signaling.png)
+
+| Label | Timing |
+| --- | --- |
+| T0H | 0.35us |
+| T1H | 0.7us |
+| T0L | 0.8us |
+| T1L | 0.6us |
+
+All these have tolerances up to +/-150ns.
 
 ## Getting Micropython up and running
 
@@ -89,9 +118,43 @@ to copy over files to the ESP
 
 And heres a tiny program I wrote to draw a rainbow.
 
-<!-- TODO: INSERT CODE -->
-<!-- TODO: INSERT GIF OF THE RUNNING LIGHTS -->
+```python
+import machine, neopixel, math
 
+np = neopixel.NeoPixel(machine.Pin(2), 24)
+
+def hsv_to_rgb(hue, sat, val):
+	h = float(hue)
+	s = float(sat)
+	v = float(val)
+	h60 = h / 60.0
+	h60f = math.floor(h60)
+	hi = int(h60f) % 6
+	f = h60 - h60f
+	p = v * (1 - s)
+	q = v * (1 - f * s)
+	t = v * (1 - (1 - f) * s)
+	r, g, b = 0, 0, 0
+	if hi == 0: r, g, b = v, t, p
+	elif hi == 1: r, g, b = q, v, p
+	elif hi == 2: r, g, b = p, v, t
+	elif hi == 3: r, g, b = p, q, v
+	elif hi == 4: r, g, b = t, p, v
+	elif hi == 5: r, g, b = v, p, q
+	r, g, b = int(r * 255), int(g * 255), int(b * 255)
+	return (r, g, b)
+
+def rainbow(np):
+	n = np.n
+	for i in range(n):
+		np[i] = hsv_to_rgb(float((float(i)/float(n)*360.0)), 1, 1)
+	np.write()
+
+
+while True:
+	rainbow(np)
+```
+![Rainbow](../../posts/blogs/images/05/rainbow.png)
 
 # Digging a bit deeper
 
@@ -115,9 +178,6 @@ machine.bitstream(pin, encoding, timing, data)
 
 The ESP specific implementation can be found at
 [machine_bitstream.c](https://github.com/micropython/micropython/blob/master/ports/esp8266/machine_bitstream.c).
-
-<!-- TODO: INSERT SOME CODE MANIPULATING NEOPIXELS -->
-<!-- TODO: EXPLAIN THE CODE -->
 
 ## An Asynchronous machine.bitstream?
 
