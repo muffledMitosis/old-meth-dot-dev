@@ -6,7 +6,7 @@ imageLocation: "../../posts/blogs/images/intro.webp"
 intro: "Using the ESP's DMA controller in conjunction with the I2S peripheral to control NeoPixels. NOT!"
 type: "blog"
 tags: ["ESP8266", "WS2812", "DMA", "I2S", "micropython", "python"]
-pending: true
+pending: false
 ---
 
 # An unfortunate predicament
@@ -23,6 +23,10 @@ the NeoPixel driver that comes with micropython. I've never really used
 micropython for anything else, figured this might be a good time to do so.
 
 # On We Go
+
+## A bit about how WS2812s work
+
+<!-- TODO: Do some research on neopixels, variants, explain how they work -->
 
 ## Getting Micropython up and running
 
@@ -45,7 +49,7 @@ We run into our first problem here. The NeoPixel runs on a 5V power supply while
 the esp run on 3.3V. The NeoPixels expect 5V logic levels too. We will be using
 a level shifter to get this done.
 
-<!-- INSERT PIC OF LEVEL SHIFTER -->
+![Level Shifter](../../posts/blogs/images/05/level_shifter.jpg)
 
 The level shifter consists of voltage dividers and MOSFETS (The particular one I
 have at least). It uses the divider circuit when shifting levels down and the
@@ -53,7 +57,7 @@ MOSFET when shifting levels up. You could for sure build something like this on
 a breadboard, but I found this small little shifter module to be incredibly
 convenient. The ability to shift 6 signals in this tiny package is just :`).
 
-<!-- INSERT CIRCUIT DIAGRAM OF THE WHOLE THING -->
+<!-- TODO: INSERT CIRCUIT DIAGRAM OF THE WHOLE THING -->
 
 ### REPL over putty and loading programs
 
@@ -85,8 +89,9 @@ to copy over files to the ESP
 
 And heres a tiny program I wrote to draw a rainbow.
 
-<!-- INSERT CODE -->
-<!-- INSERT GIF OF THE RUNNING LIGHTS -->
+<!-- TODO: INSERT CODE -->
+<!-- TODO: INSERT GIF OF THE RUNNING LIGHTS -->
+
 
 # Digging a bit deeper
 
@@ -111,8 +116,8 @@ machine.bitstream(pin, encoding, timing, data)
 The ESP specific implementation can be found at
 [machine_bitstream.c](https://github.com/micropython/micropython/blob/master/ports/esp8266/machine_bitstream.c).
 
-<!-- INSERT SOME CODE MANIPULATING NEOPIXELS -->
-<!-- EXPLAIN THE CODE -->
+<!-- TODO: INSERT SOME CODE MANIPULATING NEOPIXELS -->
+<!-- TODO: EXPLAIN THE CODE -->
 
 ## An Asynchronous machine.bitstream?
 
