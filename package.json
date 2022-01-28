@@ -23,12 +23,8 @@
     "gatsby-plugin-react-helmet": "^4.14.0",
     "gatsby-plugin-sharp": "^3.14.3",
     "gatsby-remark-highlight-code": "^3.0.1",
-<<<<<<< HEAD
-    "gatsby-source-filesystem": "^3.14.0",
-=======
-    "gatsby-remark-images": "^6.5.2",
     "gatsby-source-filesystem": "^3.9.0",
->>>>>>> writing
+    "gatsby-remark-images": "^6.5.2",
     "gatsby-transformer-remark": "^4.11.0",
     "gatsby-transformer-sharp": "^3.14.0",
     "react": "^17.0.1",
