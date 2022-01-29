@@ -2,7 +2,7 @@
 slug: "/blog/neopixels-with-the-esp8266"
 date: "2022-01-05"
 title: "NeoPixels with the ESP8266"
-imageLocation: "../../posts/blogs/images/intro.webp"
+imageLocation: "../../posts/blogs/images/05/rainbow.png"
 intro: "Using the ESP's DMA controller in conjunction with the I2S peripheral to control NeoPixels. NOT!"
 type: "blog"
 tags: ["ESP8266", "WS2812", "DMA", "I2S", "micropython", "python"]
