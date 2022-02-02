@@ -39,9 +39,25 @@ function view(data) {
 					</div>
 				);
 	
+	let animSection = (
+		<motion.div
+			animate={{
+				x: -1000
+			}}
+			transition={{
+				duration: 5
+			}}
+			exit={{
+				opacity: 0
+			}}
+		>
+		</motion.div>		
+	);
+
 	return (
-		<div className="overflow-hidden">
-			<div className='inline-grid'>
+		<div className="flex flex-row overflow-hidden">
+			<div className="flex flex-row items-center tech-lineup">
+				{images}
 				{images}
 			</div>
 		</div>
