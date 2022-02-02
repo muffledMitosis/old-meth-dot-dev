@@ -52,16 +52,15 @@ function view(data) {
 				opacity: 0
 			}}
 		>
-			<div className="flex flex-row items-center">
-				{images}
-			</div>
 		</motion.div>		
 	);
 
 	return (
 		<div className="flex flex-row overflow-hidden">
-			{animSection}
-			{animSection}
+			<div className="flex flex-row items-center tech-lineup">
+				{images}
+				{images}
+			</div>
 		</div>
 	);
 }
