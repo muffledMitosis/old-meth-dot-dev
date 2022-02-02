@@ -38,21 +38,6 @@ function view(data) {
 						/>
 					</div>
 				);
-	
-	let animSection = (
-		<motion.div
-			animate={{
-				x: -1000
-			}}
-			transition={{
-				duration: 5
-			}}
-			exit={{
-				opacity: 0
-			}}
-		>
-		</motion.div>		
-	);
 
 	return (
 		<div className="flex flex-row overflow-hidden">
