@@ -44,6 +44,8 @@ const AboutPage = () => {
         </div>
         <div className="text-3xl md:text-4xl general-text mb-8 ml-4 md:ml-24 mt-16 mr-4">My Goto Tech-Stack</div>
         <TechStack />
+        <div className="text-3xl md:text-4xl general-text mb-8 ml-4 md:ml-24 mt-16 mr-4">Some Technologies I'm Familiar With</div>
+        <TechScroll />
       </div>
     </Layout>
   );
