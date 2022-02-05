@@ -112,6 +112,28 @@ th {
 th {
 		background-color: #a3abd1;
 	}
+.tech-lineup {
+    position: relative;
+
+    animation-duration: 25s;
+    animation-name: techLine;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes techLine {
+    0% {
+        left: 0;
+    }
+
+    50% {
+        left: -100rem;
+    }
+    
+    100% {
+        left: 0;
+    }
+}
 
 @media (max-width: 1500px) {
     .md-view {
