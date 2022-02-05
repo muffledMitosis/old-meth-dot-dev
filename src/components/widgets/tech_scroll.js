@@ -40,7 +40,7 @@ function view(data) {
 				);
 
 	return (
-		<div className="flex flex-row overflow-hidden rounded-lg border border-color-white mx-8 py-3">
+		<div className="flex flex-row overflow-hidden rounded-lg border border-color-white mx-24 py-3">
 			<div className="flex flex-row items-center tech-lineup">
 				{images}
 				{images}
