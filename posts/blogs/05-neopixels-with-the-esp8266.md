@@ -9,7 +9,10 @@ tags: ["ESP8266", "WS2812", "DMA", "I2S", "micropython", "python"]
 pending: false
 ---
 
-# An unfortunate predicament
+```toc
+```
+
+# 1.0 An unfortunate predicament
 
 Well, this blog was gonna be about me screwing around with the I2S peripheral on
 the ESP8266 and getting it to drive some cool NeoPixels. Getting information
@@ -22,9 +25,9 @@ know, it ain't that exciting, but I need my blinky lights okay) specifically,
 the NeoPixel driver that comes with micropython. I've never really used
 micropython for anything else, figured this might be a good time to do so.
 
-# On We Go
+# 2.0 On We Go
 
-## A bit about how WS2812s work
+## 2.1 A bit about how WS2812s work
 
 The WS2812s are single line driven chainable LEDs, ie they are driven by one
 signal line and can be chained together, like so.
@@ -57,7 +60,7 @@ everything pretty clearly.
 
 All these have tolerances up to +/-150ns.
 
-## Getting Micropython up and running
+## 2.2 Getting Micropython up and running
 
 This was fairly simple really. The instructions on the micropython website were
 pretty straight forward, so I won't go into much detail about that here. I
@@ -69,9 +72,9 @@ command
 esptool.py --port COM3 --baud 460800 write_flash --flash_size=detect 0 .\esp8266-v1.17.bin
 ```
 
-## The Hardware Config
+## 2.3 The Hardware Config
 
-### Level shifting and power
+### 2.3.1 Level shifting and power
 
 Now that we have the software side of things set up, Its time for the hardware.
 We run into our first problem here. The NeoPixel runs on a 5V power supply while
@@ -88,7 +91,7 @@ convenient. The ability to shift 6 signals in this tiny package is just :`).
 
 <!-- TODO: INSERT CIRCUIT DIAGRAM OF THE WHOLE THING -->
 
-### REPL over putty and loading programs
+### 2.3.2 REPL over putty and loading programs
 
 Micropython on the ESP8266 by default, has a REPL *(Read Evaluate Print Loop)*
 over serial, We will be using this to interact with the chip and to load our
@@ -114,7 +117,7 @@ ampy --port COM3 --baud 115200 put main.py
 
 to copy over files to the ESP
 
-## On Forth Blinky Lights
+## 2.4 On Forth Blinky Lights
 
 And heres a tiny program I wrote to draw a rainbow.
 
@@ -156,7 +159,7 @@ while True:
 ```
 ![Rainbow](../../posts/blogs/images/05/rainbow.png)
 
-# Digging a bit deeper
+# 3.0 Digging a bit deeper
 
 The very reason I wanted to drive the WS2812s using DMA was to be able to
 manipulate GPIOs in a more robust manner, basically with no involvement of the
@@ -165,7 +168,7 @@ Nonetheless, I dig a bit deeper into how the Micropython NeoPixel driver is
 implemented. You can stop reading here onwards since this goes into a domain
 beyond driving NeoPixels. Read on for a fun adventure.
 
-## machine.bitsteam
+## 3.1 machine.bitsteam
 
 The NeoPixel driver is implemented using bitstreams. machine.bitstream() is a
 neat little function that lets you shift out bits off of a GPIO with precise
@@ -179,7 +182,7 @@ machine.bitstream(pin, encoding, timing, data)
 The ESP specific implementation can be found at
 [machine_bitstream.c](https://github.com/micropython/micropython/blob/master/ports/esp8266/machine_bitstream.c).
 
-## An Asynchronous machine.bitstream?
+## 3.2 An Asynchronous machine.bitstream?
 
 Unfortunately Micropython doesn't implement support for the I2S peripheral of
 the ESP8266 (Availability exists for the ESP32 though). One would have to
