@@ -7,6 +7,50 @@ body {
     background: linear-gradient(231.84deg, #040B22 3.15%, #252935 94.07%);
 }
 
+.table-of-contents{
+    margin-top: 4rem;
+}
+
+.table-of-contents > ul > li > p{
+    font-size: larger;
+    color: #FF5555;
+}
+
+.table-of-contents > ul > li > ul{
+    position: relative;
+    left: 0.5rem;
+    font-size: large;
+    color:#FF6767;
+}
+
+.table-of-contents > ul > li > ul > li > p{
+    position: relative;
+    left: 1rem;
+    font-size: medium;
+    color:#fc8f8f;
+}
+
+.table-of-contents > ul > li > ul > li > ul{
+    position: relative;
+    left: 1rem;
+    font-size: small;
+    color:#ffadad;
+}
+
+.table-of-contents > ul > li > ul > li > ul > li > p{
+    position: relative;
+    left: 0.5rem;
+    font-size: smaller;
+    color:#e8c2c2;
+}
+
+.table-of-contents > ul > li > ul > li > ul > li > ul{
+    position: relative;
+    left: 0.5rem;
+    font-size: smaller;
+    color:#b59a9a;
+}
+
 .main-bg-gradient {
     background: linear-gradient(231.84deg, #040B22 3.15%, #252935 94.07%);
 }
